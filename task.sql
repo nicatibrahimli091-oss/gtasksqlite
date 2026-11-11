@@ -67,13 +67,25 @@ INSERT INTO Orders (OrderID, ProductID, CustomerID, SalesPersonID, OrderDate, Sh
 (202, 103, 3, 12, '2026-10-08', '2026-10-10', 'Shipped', 1,  850),
 (203, 102, 2, 11, '2026-10-12', NULL,         'Pending', 1,  230),
 (204, 105, 5, 12, '2026-10-15', '2026-10-25', 'Delivered', 1,  420);
+/*
+--SELECT * FROM Customers;
+--SELECT FirstName, LastName, Country FROM Customers;
 
-SELECT * FROM Customers;
-SELECT FirstName, LastName, Country FROM Customers;
+--SELECT CustomerID, FirstName, LastName, Country
+--FROM Customers WHERE Country = 'Germany';
 
-SELECT CustomerID, FirstName, LastName, Country
-FROM Customers WHERE Country = 'Germany';
+--SELECT FirstName, LastName, Country, Score
+--FROM Customers
+--WHERE Score >= 300 AND Country IN ('Germany', 'France');
+*/
 
 SELECT FirstName, LastName, Country, Score
 FROM Customers
-WHERE Score >= 300 AND Country IN ('Germany', 'France');
+WHERE Score > 500
+ORDER BY Score DESC;
+
+SELECT FirstName, LastName, Country, Score
+FROM Customers
+WHERE Country IN ('Germany', 'France', 'USA')
+  AND Score >= 300
+ORDER BY Score DESC;
